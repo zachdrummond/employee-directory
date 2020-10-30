@@ -20,7 +20,7 @@ class EmployeeTable extends Component {
 
   render() {
     return (
-      <Table striped bordered hover>
+      <Table striped bordered hover className="text-center">
         <thead>
           <tr>
             <th>Image</th>
