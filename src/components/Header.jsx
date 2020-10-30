@@ -1,12 +1,14 @@
+import Jumbotron from "react-bootstrap/Jumbotron";
+
 const Header = () => {
   return (
-    <div className="text-center mt-5 mb-5">
+    <Jumbotron className="text-center">
       <h1>Employee Directory</h1>
       <p>
         Click on headers to filter by heading or use the search box to narrow
         your results.
       </p>
-    </div>
+    </Jumbotron>
   );
 };
 
