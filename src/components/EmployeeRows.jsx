@@ -1,8 +1,7 @@
 import React from "react";
 import moment from "moment";
 
-const Row = (props) => {
-  console.log(props);
+const EmployeeRows = (props) => {
   return (
     <>
       {props.employees.map((employee, index) => (
@@ -15,11 +14,11 @@ const Row = (props) => {
           </td>
           <td>{employee.cell}</td>
           <td>{employee.email}</td>
-          <td>{employee.dob.date}</td>
+          <td>{moment(employee.dob.date).format("MM/DD/YYYY")}</td>
         </tr>
       ))}
     </>
   );
 };
 
-export default Row;
+export default EmployeeRows;

@@ -1,7 +1,8 @@
 import { Component } from "react";
 import Table from "react-bootstrap/Table";
+import Button from "react-bootstrap/Button";
 import axios from "axios";
-import Row from "./Row";
+import EmployeeRows from "./EmployeeRows";
 
 class EmployeeTable extends Component {
   state = {
@@ -24,14 +25,18 @@ class EmployeeTable extends Component {
         <thead>
           <tr>
             <th>Image</th>
-            <th>Name</th>
+            <th>
+              <Button variant="link">Name</Button>
+            </th>
             <th>Phone</th>
             <th>Email</th>
-            <th>DOB</th>
+            <th>
+              <Button variant="link">Date of Birth</Button>
+            </th>
           </tr>
         </thead>
         <tbody>
-          <Row employees={this.state.employees} />
+          <EmployeeRows employees={this.state.employees} />
         </tbody>
       </Table>
     );
