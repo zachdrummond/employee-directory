@@ -1,13 +1,26 @@
 import { Component } from "react";
+import Table from "react-bootstrap/Table";
+import axios from "axios";
+import Row from "./Row";
 
 class EmployeeTable extends Component {
   state = {
     employees: [],
   };
 
+  componentDidMount = () => {
+    axios
+      .get("https://randomuser.me/api/?results=20&nat=us")
+      .then((response) => {
+        console.log(response.data.results[0]);
+        this.setState({ employees: response.data.results });
+      })
+      .catch((error) => console.log(error));
+  };
+
   render() {
     return (
-      <table className= "table striped bordered hover">
+      <Table striped bordered hover>
         <thead>
           <tr>
             <th>Image</th>
@@ -40,7 +53,7 @@ class EmployeeTable extends Component {
             <td>5</td>
           </tr>
         </tbody>
-      </table>
+      </Table>
     );
   }
 }

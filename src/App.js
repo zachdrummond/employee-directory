@@ -5,7 +5,9 @@ function App() {
   return (
     <>
       <Header />
-      <EmployeeTable/>
+      <div className="container">
+        <EmployeeTable />
+      </div>
     </>
   );
 }
