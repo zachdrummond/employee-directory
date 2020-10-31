@@ -24,6 +24,18 @@ class EmployeeTable extends Component {
     const { name, value } = event.target;
     this.setState({
       [name]: value,
+      employees: this.state.employees.filter((employee) => {
+        console.log("value: " + value);
+        console.log(employee.name.first);
+        console.log(employee.name.first.startsWith(value.toLowerCase()));
+        console.log(employee.name.last);
+        console.log(employee.name.last.startsWith(value.toLowerCase()));
+        if(employee.name.first.startsWith(value.toLowerCase()) || employee.name.last.startsWith(value.toLowerCase())){
+          return employee;
+        } else{
+          return "";
+        }
+      }),
     });
   };
 
