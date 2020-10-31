@@ -4,6 +4,7 @@ import Button from "react-bootstrap/Button";
 import axios from "axios";
 import EmployeeRows from "./EmployeeRows";
 import SearchBar from "./SearchBar";
+import "../styles/EmployeeTable.css";
 
 class EmployeeTable extends Component {
   state = {
@@ -91,7 +92,7 @@ class EmployeeTable extends Component {
           handleInputChange={this.handleInputChange}
           handleFormSubmit={this.handleFormSubmit}
         />
-        <Table striped bordered hover className="text-center">
+        <Table striped bordered hover className="text-center eTable">
           <thead>
             <tr>
               <th>Image</th>
