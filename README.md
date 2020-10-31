@@ -16,7 +16,7 @@ This is an app that displays a directory of employees' basic information. Users 
 * GitHub Repository: https://github.com/zachdrummond/employee-directory
 
 ## Usage
-1. To find specific employees, add a name to the search bar and click the "Search" button.
+1. To find specific employees, add a name to the search bar.
 2. To sort the table by name, click the "Name" header at the top of the table.
 3. To sort the table by date of birth, click the "Date of Birth" header at the top of the table.
 
