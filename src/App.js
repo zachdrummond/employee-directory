@@ -7,7 +7,7 @@ function App() {
     <>
       <Header />
       <Container>
-          <EmployeeTable />
+        <EmployeeTable />
       </Container>
     </>
   );
