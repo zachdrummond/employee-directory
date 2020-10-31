@@ -4,9 +4,10 @@ import moment from "moment";
 const EmployeeRows = ({ state }) => {
   const employeeFilter = state.employees.filter((employee) => {
     const { first, last } = employee.name;
+    const search = state.search;
     if (
-      first.toLowerCase().startsWith(state.search) ||
-      last.toLowerCase().startsWith(state.search)
+      first.toLowerCase().startsWith(search.toLowerCase()) ||
+      last.toLowerCase().startsWith(search.toLowerCase())
     ) {
       return employee;
     } else {

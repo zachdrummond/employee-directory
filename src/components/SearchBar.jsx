@@ -1,6 +1,5 @@
 import Form from "react-bootstrap/Form";
 import FormControl from "react-bootstrap/FormControl";
-import Button from "react-bootstrap/Button";
 
 const SearchBar = (props) => {
   return (
@@ -14,7 +13,6 @@ const SearchBar = (props) => {
         className="mr-sm-2"
         id="search"
       />
-      <Button onClick={props.handleFormSubmit}>Search</Button>
     </Form>
   );
 };
