@@ -1,10 +1,22 @@
 import React from "react";
 import moment from "moment";
 
-const EmployeeRows = (props) => {
+const EmployeeRows = ({ state }) => {
+  const employeeFilter = state.employees.filter((employee) => {
+    const { first, last } = employee.name;
+    if (
+      first.toLowerCase().startsWith(state.search) ||
+      last.toLowerCase().startsWith(state.search)
+    ) {
+      return employee;
+    } else {
+      return null;
+    }
+  });
+
   return (
     <>
-      {props.employees.map((employee, index) => (
+      {employeeFilter.map((employee, index) => (
         <tr key={index}>
           <td>
             <img src={employee.picture.medium} alt="Employee" />
