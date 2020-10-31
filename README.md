@@ -12,8 +12,8 @@
 This is an app that displays a directory of employees' basic information. Users can sort the table by name or date of birth and search the table by name. Now all business owners can have quick access to all of their employees' information!
 
 ## Links
-* Website: 
-* GitHub Repository: 
+* Website: http://zachdrummond.github.io/employee-directory
+* GitHub Repository: https://github.com/zachdrummond/employee-directory
 
 ## Usage
 1. To find specific employees, add a name to the search bar and click the "Search" button.
@@ -29,13 +29,13 @@ This is an app that displays a directory of employees' basic information. Users 
 
 ## App Preview
 ### *Home Page*
-![1](./public/images/Home.png)
-### *Online Transactions*
-![2](./public/images/transactions.png)
-### *Offline Transaction*
-![3](./public/images/offline.png)
-### *Offline Transaction now Online*
-![4](./public/images/online.png)
+![1](./public/images/home.png)
+### *Search Bar*
+![2](./public/images/search.png)
+### *Sort by Name*
+![3](./public/images/sortByName.png)
+### *Sort by Date*
+![4](./public/images/sortByDate.png)
 
 ## Credits
 * https://reactjs.org/
