@@ -12,6 +12,7 @@ class EmployeeTable extends Component {
     search: "",
   };
 
+  // Calls the API and sets the state as soon as the component mounts
   componentDidMount = () => {
     axios
       .get("https://randomuser.me/api/?results=20&nat=us")
@@ -21,6 +22,7 @@ class EmployeeTable extends Component {
       .catch((error) => console.log(error));
   };
 
+  // Function to set the state based on the user's input
   handleInputChange = (event) => {
     const { name, value } = event.target;
     this.setState({
@@ -28,6 +30,7 @@ class EmployeeTable extends Component {
     });
   };
 
+  // Function to sort the table by employee name
   sortTableByName = () => {
     this.setState({
       employees: this.state.employees.sort((a, b) => {
@@ -42,6 +45,7 @@ class EmployeeTable extends Component {
     });
   };
 
+  // Function to sort the table by employee date of birth
   sortTableByDateOfBirth = () => {
     this.setState({
       employees: this.state.employees.sort((a, b) => {
@@ -56,6 +60,7 @@ class EmployeeTable extends Component {
     });
   };
 
+  // Renders this element to the page
   render() {
     return (
       <>
@@ -70,6 +75,7 @@ class EmployeeTable extends Component {
               <th>
                 Name
                 <Button variant="link" onClick={this.sortTableByName} size="sm">
+                  {/* A-Z Icon */}
                   <svg
                     width="1em"
                     height="1em"
@@ -99,6 +105,7 @@ class EmployeeTable extends Component {
                   onClick={this.sortTableByDateOfBirth}
                   size="sm"
                 >
+                  {/* 1-9 Icon */}
                   <svg
                     width="1em"
                     height="1em"

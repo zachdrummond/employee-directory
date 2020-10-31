@@ -2,6 +2,7 @@ import React from "react";
 import moment from "moment";
 
 const EmployeeRows = ({ state }) => {
+  // Filters the employees array by the user's input
   const employeeFilter = state.employees.filter((employee) => {
     const { first, last } = employee.name;
     const search = state.search;
@@ -17,6 +18,7 @@ const EmployeeRows = ({ state }) => {
 
   return (
     <>
+      {/* Maps the filtered employees array to display on the page */}
       {employeeFilter.map((employee, index) => (
         <tr key={index}>
           <td>
