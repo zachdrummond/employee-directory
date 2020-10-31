@@ -3,11 +3,12 @@ import Table from "react-bootstrap/Table";
 import Button from "react-bootstrap/Button";
 import axios from "axios";
 import EmployeeRows from "./EmployeeRows";
+import SearchBar from "./SearchBar";
 
 class EmployeeTable extends Component {
   state = {
     employees: [],
-    search: ""
+    search: "",
   };
 
   componentDidMount = () => {
@@ -49,26 +50,31 @@ class EmployeeTable extends Component {
 
   render() {
     return (
-      <Table striped bordered hover className="text-center">
-        <thead>
-          <tr>
-            <th>Image</th>
-            <th>
-              <Button variant="link" onClick={this.sortTableByName}>
-                Name
-              </Button>
-            </th>
-            <th>Phone</th>
-            <th>Email</th>
-            <th>
-              <Button variant="link" onClick={this.sortTableByDateOfBirth}>Date of Birth</Button>
-            </th>
-          </tr>
-        </thead>
-        <tbody>
-          <EmployeeRows employees={this.state.employees}/>
-        </tbody>
-      </Table>
+      <>
+        <SearchBar/>
+        <Table striped bordered hover className="text-center">
+          <thead>
+            <tr>
+              <th>Image</th>
+              <th>
+                <Button variant="link" onClick={this.sortTableByName}>
+                  Name
+                </Button>
+              </th>
+              <th>Phone</th>
+              <th>Email</th>
+              <th>
+                <Button variant="link" onClick={this.sortTableByDateOfBirth}>
+                  Date of Birth
+                </Button>
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <EmployeeRows employees={this.state.employees} />
+          </tbody>
+        </Table>
+      </>
     );
   }
 }
