@@ -13,10 +13,23 @@ class EmployeeTable extends Component {
     axios
       .get("https://randomuser.me/api/?results=20&nat=us")
       .then((response) => {
-        console.log(response.data.results[0]);
         this.setState({ employees: response.data.results });
       })
       .catch((error) => console.log(error));
+  };
+
+  sortTableByName = () => {
+    this.setState({
+      employees: this.state.employees.sort((a, b) => {
+        if (a.name.last < b.name.last) {
+          return -1;
+        } else if (a.name.last > b.name.last) {
+          return 1;
+        } else {
+          return 0;
+        }
+      }),
+    });
   };
 
   render() {
@@ -26,7 +39,9 @@ class EmployeeTable extends Component {
           <tr>
             <th>Image</th>
             <th>
-              <Button variant="link">Name</Button>
+              <Button variant="link" onClick={this.sortTableByName}>
+                Name
+              </Button>
             </th>
             <th>Phone</th>
             <th>Email</th>
@@ -36,7 +51,10 @@ class EmployeeTable extends Component {
           </tr>
         </thead>
         <tbody>
-          <EmployeeRows employees={this.state.employees} />
+          <EmployeeRows
+            employees={this.state.employees}
+            onClick={this.sortTableByDateOfBirth}
+          />
         </tbody>
       </Table>
     );
