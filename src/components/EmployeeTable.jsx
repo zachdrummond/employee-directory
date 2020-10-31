@@ -20,6 +20,18 @@ class EmployeeTable extends Component {
       .catch((error) => console.log(error));
   };
 
+  handleInputChange = (event) => {
+    const { name, value } = event.target;
+    this.setState({
+      [name]: value,
+    });
+  };
+
+  handleFormSubmit = event => {
+    event.preventDefault();
+    console.log("Button worked");
+  };
+
   sortTableByName = () => {
     this.setState({
       employees: this.state.employees.sort((a, b) => {
@@ -51,7 +63,11 @@ class EmployeeTable extends Component {
   render() {
     return (
       <>
-        <SearchBar/>
+        <SearchBar
+          value={this.state.search}
+          handleInputChange={this.handleInputChange}
+          handleFormSubmit={this.handleFormSubmit}
+        />
         <Table striped bordered hover className="text-center">
           <thead>
             <tr>
