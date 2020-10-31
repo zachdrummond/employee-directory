@@ -2,3 +2,8 @@
   border-width: medium !important;
   border-color: navy !important;
 }
+
+thead {
+  color: navy;
+  font-size: larger;
+}
