@@ -2,10 +2,7 @@ import Form from "react-bootstrap/Form";
 import FormControl from "react-bootstrap/FormControl";
 import Button from "react-bootstrap/Button";
 
-import React from "react";
-
 const SearchBar = (props) => {
-  //console.log(props);
   return (
     <Form inline className="justify-content-center mb-5">
       <FormControl
@@ -13,7 +10,7 @@ const SearchBar = (props) => {
         value={props.value}
         name="search"
         type="text"
-        placeholder="Search"
+        placeholder="Search by Name"
         className="mr-sm-2"
         id="search"
       />

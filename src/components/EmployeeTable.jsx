@@ -27,9 +27,20 @@ class EmployeeTable extends Component {
     });
   };
 
-  handleFormSubmit = event => {
+  handleFormSubmit = (event) => {
     event.preventDefault();
-    console.log("Button worked");
+    this.setState({
+      employees: this.state.employees.filter((employee) => {
+        switch (this.state.search) {
+          case employee.name.first:
+            return employee;
+          case employee.name.last:
+            return employee;
+          default:
+            return null;
+        }
+      }),
+    });
   };
 
   sortTableByName = () => {
