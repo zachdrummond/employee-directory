@@ -7,6 +7,7 @@ import EmployeeRows from "./EmployeeRows";
 class EmployeeTable extends Component {
   state = {
     employees: [],
+    search: ""
   };
 
   componentDidMount = () => {
@@ -32,6 +33,20 @@ class EmployeeTable extends Component {
     });
   };
 
+  sortTableByDateOfBirth = () => {
+    this.setState({
+      employees: this.state.employees.sort((a, b) => {
+        if (a.dob.date < b.dob.date) {
+          return -1;
+        } else if (a.dob.date > b.dob.date) {
+          return 1;
+        } else {
+          return 0;
+        }
+      }),
+    });
+  };
+
   render() {
     return (
       <Table striped bordered hover className="text-center">
@@ -46,15 +61,12 @@ class EmployeeTable extends Component {
             <th>Phone</th>
             <th>Email</th>
             <th>
-              <Button variant="link">Date of Birth</Button>
+              <Button variant="link" onClick={this.sortTableByDateOfBirth}>Date of Birth</Button>
             </th>
           </tr>
         </thead>
         <tbody>
-          <EmployeeRows
-            employees={this.state.employees}
-            onClick={this.sortTableByDateOfBirth}
-          />
+          <EmployeeRows employees={this.state.employees}/>
         </tbody>
       </Table>
     );
